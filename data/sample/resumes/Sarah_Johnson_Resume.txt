@@ -1,0 +1,69 @@
+SARAH JOHNSON
+Data Scientist & ML Engineer
+Email: sarah.j@email.com | Phone: +27 987 654 321
+Portfolio: sarahjohnson.com | GitHub: github.com/sarahj
+
+PROFESSIONAL SUMMARY
+Data scientist with 4 years of experience in machine learning, statistical
+modeling, and deploying ML solutions in production. Specialized in NLP and
+computer vision with proven track record of delivering business impact.
+
+TECHNICAL SKILLS
+Programming: Python, R, SQL, Scala
+ML/AI: scikit-learn, TensorFlow, PyTorch, Keras, XGBoost
+NLP: spaCy, NLTK, Transformers, BERT, Hugging Face
+Computer Vision: OpenCV, YOLO, CNNs
+Data Processing: pandas, NumPy, Spark, Airflow
+Visualization: Matplotlib, Seaborn, Plotly, Tableau, Power BI
+Cloud: AWS (SageMaker, EC2), GCP, Azure
+Databases: PostgreSQL, MongoDB, Redis
+Tools: Docker, Git, Jupyter, MLflow
+
+PROFESSIONAL EXPERIENCE
+
+Senior Data Scientist | AI Solutions Ltd. | Johannesburg, SA | 2021 - Present
+- Developed NLP sentiment analysis model achieving 92% accuracy for customer feedback
+- Built recommendation system that increased user engagement by 35%
+- Deployed ML models to production using Docker and Kubernetes
+- Conducted A/B tests and statistical analysis for product features
+- Reduced model inference time by 60% through optimization
+- Presented findings to C-level executives and stakeholders
+- Mentored 2 junior data scientists
+
+Machine Learning Engineer | DataCorp | Durban, SA | 2020 - 2021
+- Created predictive models for customer churn with 85% accuracy
+- Implemented computer vision solution for quality control in manufacturing
+- Optimized model training pipelines reducing training time by 40%
+- Collaborated with engineering team on API integration
+- Built data pipelines using Apache Airflow
+- Improved model performance through hyperparameter tuning
+
+Data Analyst | Analytics Pro | Cape Town, SA | 2019 - 2020
+- Performed statistical analysis on business metrics
+- Created interactive dashboards for stakeholders using Tableau
+- Cleaned and processed large datasets (100M+ records)
+- Automated reporting reducing manual work by 50%
+- Conducted exploratory data analysis
+
+EDUCATION
+Master of Science in Data Science
+Stellenbosch University | 2017 - 2019
+Thesis: "Deep Learning Approaches for Text Classification"
+
+Bachelor of Science in Mathematics
+University of Pretoria | 2013 - 2016
+Graduated with Distinction
+
+PUBLICATIONS & PRESENTATIONS
+- "Advanced NLP Techniques for Text Classification" - ML Conference 2022
+- "Building Scalable ML Pipelines" - PyConZA 2021
+
+CERTIFICATIONS
+- TensorFlow Developer Certificate (2022)
+- AWS Machine Learning Specialty (2021)
+- Deep Learning Specialization - Coursera (2020)
+
+AWARDS
+- Best Data Science Project - DataHack 2021
+- Top 5% Kaggle Competitor
+        

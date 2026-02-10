@@ -1,0 +1,29 @@
+Job Title: Data Scientist
+Company: DataMinds AI
+
+Looking for a Data Scientist to join our ML team.
+
+Required Skills:
+- Python, R
+- Machine Learning (scikit-learn, TensorFlow, PyTorch)
+- SQL, NoSQL databases
+- Data visualization (Matplotlib, Plotly)
+- Statistical analysis
+- NLP, Computer Vision (preferred)
+
+Experience:
+- 3+ years in data science or ML
+- Strong mathematical background
+- Experience with production ML models
+- A/B testing and experimentation
+
+Education:
+- Master's degree in Computer Science, Statistics, or related field
+
+Responsibilities:
+- Develop and deploy machine learning models
+- Perform statistical analysis
+- Create data visualizations
+- Collaborate with engineering team
+- Present findings to stakeholders
+        

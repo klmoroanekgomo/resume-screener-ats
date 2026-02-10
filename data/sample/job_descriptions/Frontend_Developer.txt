@@ -1,0 +1,29 @@
+Job Title: Frontend Developer
+Company: WebTech Solutions
+
+Seeking a creative Frontend Developer with modern web expertise.
+
+Required Skills:
+- JavaScript, TypeScript
+- React, Vue.js or Angular
+- HTML5, CSS3, Sass
+- Responsive design
+- Git, npm, webpack
+- RESTful APIs
+
+Experience:
+- 3+ years frontend development
+- Portfolio of web applications
+- Experience with modern frameworks
+- Understanding of UX principles
+
+Education:
+- Bachelor's degree in Computer Science or related field
+
+Responsibilities:
+- Build responsive web applications
+- Implement pixel-perfect designs
+- Optimize for performance
+- Write unit tests
+- Collaborate with designers and backend team
+        

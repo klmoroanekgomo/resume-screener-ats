@@ -1,0 +1,55 @@
+MICHAEL CHEN
+Frontend Developer
+Email: michael.chen@email.com | Phone: +27 555 123 456
+Portfolio: michaelchen.dev | GitHub: github.com/mchen
+
+SUMMARY
+Creative frontend developer with 4 years of experience building modern,
+responsive web applications. Expertise in React ecosystem and pixel-perfect
+implementation of designs.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML5, CSS3
+Frameworks: React, Next.js, Vue.js, Angular
+Styling: Tailwind CSS, Sass, Bootstrap, Material-UI
+State Management: Redux, Context API, Zustand
+Testing: Jest, React Testing Library, Cypress
+Tools: Git, npm, Webpack, Vite, Figma
+APIs: REST, GraphQL, WebSockets
+
+EXPERIENCE
+
+Frontend Developer | WebTech Solutions | Johannesburg, SA | 2021 - Present
+- Built responsive web applications using React and TypeScript
+- Implemented pixel-perfect designs from Figma mockups
+- Optimized application performance achieving 95+ Lighthouse scores
+- Reduced bundle size by 40% through code splitting and lazy loading
+- Wrote comprehensive unit tests with 85% code coverage
+- Collaborated with UX designers and backend developers
+- Mentored junior developers on React best practices
+
+Junior Frontend Developer | DigitalCraft | Pretoria, SA | 2020 - 2021
+- Developed features for e-commerce platform using Vue.js
+- Implemented responsive designs for mobile and desktop
+- Integrated RESTful APIs and handled state management
+- Fixed bugs and improved user experience
+- Participated in code reviews and sprint planning
+
+Frontend Intern | StartupHub | Cape Town, SA | 2019 - 2020
+- Built landing pages and marketing websites
+- Learned React and modern JavaScript (ES6+)
+- Assisted senior developers with feature development
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of the Witwatersrand | 2015 - 2018
+
+CERTIFICATIONS
+- React Developer Certificate - Meta (2022)
+- JavaScript Algorithms and Data Structures - freeCodeCamp (2020)
+
+PROJECTS
+- E-commerce Dashboard: Admin panel with charts and analytics (React, TypeScript)
+- Portfolio CMS: Content management system for portfolios (Next.js, Tailwind)
+- Weather App: Real-time weather application (React, OpenWeather API)
+        

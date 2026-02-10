@@ -1,0 +1,29 @@
+Job Title: Senior Python Developer
+Company: TechCorp
+
+We are seeking a Senior Python Developer with 5+ years of experience.
+
+Required Skills:
+- Python, Django, FastAPI
+- PostgreSQL, MongoDB
+- AWS, Docker, Kubernetes
+- RESTful APIs, Microservices
+- Git, CI/CD
+
+Experience:
+- 5+ years in software development
+- 3+ years with Python
+- Experience with cloud platforms
+- Strong problem-solving skills
+
+Education:
+- Bachelor's degree in Computer Science or related field
+
+Responsibilities:
+- Design and develop scalable backend services
+- Build and maintain RESTful APIs
+- Collaborate with frontend team
+- Write clean, maintainable code
+- Mentor junior developers
+- Participate in code reviews
+        

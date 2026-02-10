@@ -1,0 +1,57 @@
+JOHN DOE
+Senior Software Engineer
+Email: john.doe@email.com | Phone: +27 123 456 789
+LinkedIn: linkedin.com/in/johndoe | GitHub: github.com/johndoe
+
+SUMMARY
+Experienced software engineer with 6 years of expertise in Python development,
+cloud infrastructure, and building scalable applications. Passionate about clean
+code and mentoring junior developers.
+
+SKILLS
+Programming Languages: Python, JavaScript, SQL, Bash
+Frameworks & Libraries: Django, FastAPI, React, Flask
+Databases: PostgreSQL, MongoDB, Redis, MySQL
+Cloud & DevOps: AWS (EC2, S3, Lambda, RDS), Docker, Kubernetes, Jenkins
+Tools & Technologies: Git, CI/CD, Terraform, Nginx, Linux
+Methodologies: Agile, Scrum, Test-Driven Development
+
+PROFESSIONAL EXPERIENCE
+
+Senior Python Developer | TechStart Inc. | Johannesburg, SA | 2021 - Present
+- Built microservices architecture serving 1M+ users using FastAPI and Docker
+- Implemented RESTful APIs with 99.9% uptime and <100ms response time
+- Deployed applications on AWS using ECS, reducing infrastructure costs by 30%
+- Reduced API response time by 40% through database optimization and caching
+- Led team of 3 developers on core platform features
+- Implemented CI/CD pipelines using Jenkins and GitHub Actions
+
+Python Developer | SoftwareCo | Cape Town, SA | 2019 - 2021
+- Developed web applications using Django and PostgreSQL
+- Integrated third-party payment gateways (Stripe, PayPal)
+- Wrote comprehensive unit tests achieving 90% code coverage
+- Mentored 2 junior developers and conducted code reviews
+- Improved application performance by 25% through optimization
+- Collaborated with product team on feature development
+
+Junior Developer | StartupXYZ | Pretoria, SA | 2018 - 2019
+- Built features for e-commerce platform using Python and Django
+- Fixed bugs and improved application performance
+- Participated in daily standups and sprint planning
+- Learned Docker and containerization
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Cape Town | 2014 - 2017
+GPA: 3.7/4.0
+
+CERTIFICATIONS
+- AWS Certified Solutions Architect - Associate (2022)
+- Python Professional Certificate - DataCamp (2020)
+- Docker Certified Associate (2021)
+
+PROJECTS
+- E-commerce API: Built scalable REST API handling 10K requests/min
+- Traffic Predictor: ML system predicting traffic congestion (Python, XGBoost)
+- Chat Application: Real-time chat using WebSockets and Redis
+        
