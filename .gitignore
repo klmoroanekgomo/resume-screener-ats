@@ -1,0 +1,48 @@
+# Virtual Environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Data files
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.csv
+*.pdf
+*.docx
+
+# Models
+models/*.pkl
+models/*.joblib
+models/*.pt
+models/*.h5
+!models/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend
+node_modules/
+build/
+dist/
+
+# Logs
+*.log
