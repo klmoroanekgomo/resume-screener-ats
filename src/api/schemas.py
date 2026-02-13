@@ -3,7 +3,7 @@ Pydantic schemas for API request/response validation
 """
 
 from pydantic import BaseModel, Field, ConfigDict
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any  # Added Any here
 from datetime import datetime
 
 # Request Schemas
@@ -81,8 +81,8 @@ class MatchResultResponse(BaseModel):
     overall_score: float
     fit_level: str
     skill_match: SkillMatchResponse
-    experience_match: Dict[str, any]
-    education_match: Dict[str, any]
+    experience_match: Dict[str, Any]  # Changed from Dict[str, any] to Dict[str, Any]
+    education_match: Dict[str, Any]   # Changed from Dict[str, any] to Dict[str, Any]
     text_similarity: float
     semantic_similarity: float
     recommendations: List[str]

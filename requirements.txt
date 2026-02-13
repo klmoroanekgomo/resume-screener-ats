@@ -39,4 +39,5 @@ plotly>=5.14.0
 streamlit>=1.25.0
 
 # PDF generation (for sample data)
-fpdf2>=2.7.0
+fpdf2>=2.7.0streamlit
+plotly
