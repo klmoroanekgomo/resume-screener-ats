@@ -41,3 +41,6 @@ streamlit>=1.25.0
 # PDF generation (for sample data)
 fpdf2>=2.7.0streamlit
 plotly
+sqlalchemy
+psycopg2-binary
+alembic
