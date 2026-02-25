@@ -19,6 +19,7 @@ def generate_uuid():
 class Resume(Base):
     """Resume table"""
     __tablename__ = "resumes"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(String, primary_key=True, default=generate_uuid)
     filename = Column(String, unique=True, nullable=False, index=True)
@@ -47,12 +48,13 @@ class Resume(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     
-    # Relationships
-    matches = relationship("Match", back_populates="resume", cascade="all, delete-orphan")
+    # Relationships - using string references
+    matches = relationship("Match", back_populates="resume", cascade="all, delete-orphan", foreign_keys="[Match.resume_id]")
 
 class JobDescription(Base):
     """Job description table"""
     __tablename__ = "job_descriptions"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(String, primary_key=True, default=generate_uuid)
     title = Column(String, nullable=False, index=True)
@@ -72,12 +74,13 @@ class JobDescription(Base):
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     is_active = Column(Boolean, default=True)
     
-    # Relationships
-    matches = relationship("Match", back_populates="job", cascade="all, delete-orphan")
+    # Relationships - using string references
+    matches = relationship("Match", back_populates="job", cascade="all, delete-orphan", foreign_keys="[Match.job_id]")
 
 class Match(Base):
     """Resume-Job match results table"""
     __tablename__ = "matches"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(String, primary_key=True, default=generate_uuid)
     resume_id = Column(String, ForeignKey("resumes.id"), nullable=False)
@@ -99,13 +102,14 @@ class Match(Base):
     # Metadata
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     
-    # Relationships
-    resume = relationship("Resume", back_populates="matches")
-    job = relationship("JobDescription", back_populates="matches")
+    # Relationships - using string references
+    resume = relationship("Resume", back_populates="matches", foreign_keys=[resume_id])
+    job = relationship("JobDescription", back_populates="matches", foreign_keys=[job_id])
 
 class User(Base):
     """User table (optional - for multi-user support)"""
     __tablename__ = "users"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(String, primary_key=True, default=generate_uuid)
     username = Column(String, unique=True, nullable=False, index=True)
@@ -120,4 +124,3 @@ class User(Base):
     # Metadata
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     last_login = Column(DateTime(timezone=True))
-
