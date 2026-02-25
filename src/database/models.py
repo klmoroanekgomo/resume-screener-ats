@@ -5,7 +5,7 @@ SQLAlchemy models for database tables
 from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKey, JSON, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from src.database.database import Base
+from database.database import Base
 import uuid
 
 def generate_uuid():
