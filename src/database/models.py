@@ -2,10 +2,14 @@
 SQLAlchemy models for database tables
 """
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
 from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKey, JSON, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from database.database import Base
+from src.database.database import Base
 import uuid
 
 def generate_uuid():

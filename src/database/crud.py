@@ -2,8 +2,12 @@
 CRUD operations for database
 """
 
-from sqlalchemy import func
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
 from sqlalchemy.orm import Session
+from sqlalchemy import func
 from src.database.models import Resume, JobDescription, Match, User
 from typing import List, Optional
 import json
