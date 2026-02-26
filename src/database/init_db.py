@@ -4,11 +4,10 @@ Initialize database - create all tables
 
 import sys
 import os
-
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-from src.database.database import engine, Base
-from src.database.models import Resume, JobDescription, Match, User
+from src.database.database import engine
+from src.database.models import Base, Resume, JobDescription, Match, User
 
 def init_database():
     """Create all database tables"""
@@ -16,7 +15,10 @@ def init_database():
     print("INITIALIZING DATABASE")
     print("="*70)
     
-    print("\nCreating tables...")
+    print("\nDropping existing tables (if any)...")
+    Base.metadata.drop_all(bind=engine)
+    
+    print("Creating tables...")
     Base.metadata.create_all(bind=engine)
     
     print("✓ Tables created successfully!")

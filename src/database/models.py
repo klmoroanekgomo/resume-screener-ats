@@ -1,16 +1,16 @@
 """
-SQLAlchemy models for database tables
+SQLAlchemy models for database tables - Simplified version
 """
 
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-
 from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKey, JSON, Boolean
-from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from src.database.database import Base
+from sqlalchemy.ext.declarative import declarative_base
 import uuid
+import os
+import sys
+
+# Get the database Base from a fresh declarative_base
+Base = declarative_base()
 
 def generate_uuid():
     """Generate UUID for primary keys"""
@@ -19,7 +19,6 @@ def generate_uuid():
 class Resume(Base):
     """Resume table"""
     __tablename__ = "resumes"
-    __table_args__ = {'extend_existing': True}
     
     id = Column(String, primary_key=True, default=generate_uuid)
     filename = Column(String, unique=True, nullable=False, index=True)
@@ -47,14 +46,10 @@ class Resume(Base):
     # Metadata
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
-    
-    # Relationships - using string references
-    matches = relationship("Match", back_populates="resume", cascade="all, delete-orphan", foreign_keys="[Match.resume_id]")
 
 class JobDescription(Base):
     """Job description table"""
     __tablename__ = "job_descriptions"
-    __table_args__ = {'extend_existing': True}
     
     id = Column(String, primary_key=True, default=generate_uuid)
     title = Column(String, nullable=False, index=True)
@@ -73,18 +68,14 @@ class JobDescription(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     is_active = Column(Boolean, default=True)
-    
-    # Relationships - using string references
-    matches = relationship("Match", back_populates="job", cascade="all, delete-orphan", foreign_keys="[Match.job_id]")
 
 class Match(Base):
     """Resume-Job match results table"""
     __tablename__ = "matches"
-    __table_args__ = {'extend_existing': True}
     
     id = Column(String, primary_key=True, default=generate_uuid)
-    resume_id = Column(String, ForeignKey("resumes.id"), nullable=False)
-    job_id = Column(String, ForeignKey("job_descriptions.id"), nullable=False)
+    resume_id = Column(String, ForeignKey("resumes.id", ondelete="CASCADE"), nullable=False, index=True)
+    job_id = Column(String, ForeignKey("job_descriptions.id", ondelete="CASCADE"), nullable=False, index=True)
     
     # Match scores
     overall_score = Column(Float, nullable=False)
@@ -101,15 +92,10 @@ class Match(Base):
     
     # Metadata
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    
-    # Relationships - using string references
-    resume = relationship("Resume", back_populates="matches", foreign_keys=[resume_id])
-    job = relationship("JobDescription", back_populates="matches", foreign_keys=[job_id])
 
 class User(Base):
     """User table (optional - for multi-user support)"""
     __tablename__ = "users"
-    __table_args__ = {'extend_existing': True}
     
     id = Column(String, primary_key=True, default=generate_uuid)
     username = Column(String, unique=True, nullable=False, index=True)
@@ -118,7 +104,7 @@ class User(Base):
     full_name = Column(String)
     
     # Role-based access
-    role = Column(String, default="recruiter")  # recruiter, admin, viewer
+    role = Column(String, default="recruiter")
     is_active = Column(Boolean, default=True)
     
     # Metadata
