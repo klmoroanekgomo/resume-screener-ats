@@ -12,6 +12,7 @@ import shutil
 import time
 from datetime import datetime
 import sys
+import numpy as np
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -379,20 +380,59 @@ async def match_resume_to_job(
     if missing_skills and len(missing_skills) <= 3:
         recommendations.append(f"Consider acquiring: {', '.join(missing_skills[:3])}")
     
-    # Save match to database
+    # Helper function to convert numpy types to Python types
+    def convert_to_python_type(obj):
+        """Convert numpy types to Python native types"""
+        import numpy as np
+        if isinstance(obj, (np.integer, np.int64, np.int32)):
+            return int(obj)
+        elif isinstance(obj, (np.floating, np.float64, np.float32)):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif isinstance(obj, dict):
+            return {key: convert_to_python_type(value) for key, value in obj.items()}
+        elif isinstance(obj, list):
+            return [convert_to_python_type(item) for item in obj]
+        else:
+            return obj
+    
+    # Save match to database - convert numpy types
     match_data = {
         "resume_id": resume_id,
         "job_id": job_id,
-        "overall_score": match_result['overall_score'],
-        "skill_match_percentage": match_result['skill_match']['match_percentage'],
-        "text_similarity": match_result['text_similarity'],
-        "semantic_similarity": match_result['semantic_similarity'],
+        "overall_score": float(match_result['overall_score']),
+        "skill_match_percentage": float(match_result['skill_match']['match_percentage']),
+        "text_similarity": float(match_result['text_similarity']),
+        "semantic_similarity": float(match_result['semantic_similarity']),
         "fit_level": match_result['fit_level'],
-        "skill_match_details": match_result['skill_match'],
-        "experience_match": match_result['experience_match'],
-        "education_match": match_result['education_match'],
+        "skill_match_details": convert_to_python_type(match_result['skill_match']),
+        "experience_match": convert_to_python_type(match_result['experience_match']),
+        "education_match": convert_to_python_type(match_result['education_match']),
         "recommendations": recommendations
     }
+    
+    try:
+        match_record = crud.create_match(db, match_data)
+        print(f"✓ Match saved to database: {match_record.id}")
+    except Exception as e:
+        print(f"⚠ Warning: Could not save match to database: {e}")
+        import traceback
+        traceback.print_exc()
+        # Continue anyway - return the match result even if saving fails
+    
+    return MatchResultResponse(
+        candidate_name=resume.candidate_name,
+        filename=resume.filename,
+        overall_score=match_result['overall_score'],
+        fit_level=match_result['fit_level'],
+        skill_match=SkillMatchResponse(**match_result['skill_match']),
+        experience_match=match_result['experience_match'],
+        education_match=match_result['education_match'],
+        text_similarity=match_result['text_similarity'],
+        semantic_similarity=match_result['semantic_similarity'],
+        recommendations=recommendations
+    )
     
     match_record = crud.create_match(db, match_data)
     
